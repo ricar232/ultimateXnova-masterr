@@ -1,0 +1,161 @@
+
+
+html {
+    /* background: radial-gradient(circle, rgba(74,99,112,1) 0%, rgba(42,42,61,1) 58%, rgba(2,2,6,1) 100%);
+     background-image: url("../img/login.png");
+    background-size: cover;
+    background-position: center center; */
+    background-color: rgba(0,0,0,1);
+    background: none;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background: none;
+}
+
+.login-background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0 auto;
+    z-index: -1;
+}
+.login-background .bg-1, .login-background .bg-2, .login-background .bg-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    background-size: cover;
+    background-position: center center;
+}
+
+.login-background .bg-1 {
+    background-image: url("../img/login/login_background_2.webp");
+    animation: moveAnimation 80s infinite ease;
+}
+
+@keyframes moveAnimation {
+    0% {
+        transform: scale(1) translateX(0) translateY(20%);
+    }
+    50% {
+        transform: scale(1.1) translateX(-5%) translateY(0%);
+    }
+    100% {
+        transform: scale(1) translateX(0) translateY(20%);
+    }
+}
+
+
+.login-background .bg-2 {
+    background-image: url("../img/login/login_overlay_dark.webp");
+}
+.login-background .bg-3 {
+    background-image: url("../img/login/login_overlay_orange.webp");
+    opacity: 0;
+    animation: fadeAnimation 7s infinite ease;
+}
+
+@keyframes fadeAnimation {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+.login-container, .description-container{
+    padding: 20px;
+    margin-top: 20vh;
+    
+    float: right;
+}
+.description-container {
+    float: left;
+    text-align: center;
+}
+
+.register-container {
+    max-width: 500px;
+    
+    margin: 0 auto;
+    margin-top: 5vh;
+}
+
+
+.login-heading {
+    font-size: 1.5em;
+    color: rgba(255,255,255,1);
+}
+
+
+
+  #rules li, #rules ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .info {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.8em;
+  }
+
+  .lang-flag {
+    width: 24px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  .logo {
+   
+    width: 300px;
+ }
+
+  @media (max-width: 750px) {
+    .uk-navbar-nav {
+        display: none;
+    }
+
+    .login-container, .description-container{
+        padding: 20px;
+        margin-top: 0vh;
+        width: 100%;
+        float: none;
+        max-width: none !important;
+        margin-bottom: 25px;
+        display: block;
+    }
+
+    .login-container {
+        margin-bottom: 105px !important;
+    }
+    .description-container {
+        float:none;
+        text-align: center;
+    }
+    .logo {
+   
+        width: 200px;
+     }
+     .main-menu {
+        padding: 30px !important;
+       
+      }
+}

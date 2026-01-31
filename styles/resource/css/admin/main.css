@@ -1,0 +1,92 @@
+*{
+	font-size: 12px;
+	font-family: Verdana, Helvetica, Arial;
+	font-weight: 500;
+}
+html {
+	background: url('../../../theme/gow/img/background.jpg') 0 0;
+	background-size: cover;
+	background-position: fixed;
+	height: 100%;
+}
+body {
+	background: none !important;
+	height: 100%;
+}
+
+.content{
+	color: #fff;
+}
+
+#leftmenu .menu-active{
+	background-color: #4c4949!important;
+}
+#leftmenu li:hover{
+	background-color: #3b3737!important;
+}
+
+
+/*font sizes*/
+.fs-9{
+	font-size: 9px;
+}
+.fs-10{
+	font-size: 10px;
+}
+.fs-11{
+	font-size: 11px;
+}
+.fs-12{
+	font-size: 12px;
+}
+.fs-14{
+	font-size: 14px;
+}
+/*background colors*/
+
+.bg-black{
+  background-color: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+ 
+  color: #ffffff;
+  padding: 50px;
+  text-align: center;
+}
+.bg-dark {
+	background-color: rgba(0,0,0,0.8) !important;
+  backdrop-filter: blur(10px);
+
+}
+
+.adm-left-menu li {
+	padding-left: 10px !important;
+}
+.topnav {
+	border-radius: 0px 00px 20px 20px;
+	border: 5px solid rgba(255, 0, 0, 0.6) !important;
+	border-top: none !important;
+}
+.table-dark a{
+	color: #fff;
+}
+.table-dark a:hover{
+	color: #ddd;
+}
+
+/*colors*/
+
+.text-yellow{
+	color:#ffd600;
+}
+
+/*--*/
+
+/*effects*/
+
+.cursor-pointer{
+	cursor: pointer;
+}
+
+.hover-underline:hover{
+	text-decoration: underline;
+}
