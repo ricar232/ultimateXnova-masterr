@@ -116,6 +116,13 @@ def main():
     target3 = "if (MODE !== 'INSTALL') {\n\t\ttry {\n\t\t\t$config\t\t= Config::get();"
     replacement3 = "if (MODE !== 'INSTALL' && class_exists('Config')) {\n\t\ttry {\n\t\t\t$config\t\t= Config::get();"
     patch_file(gf_path, target3, replacement3)
+
+    # Patch 4: Fix Cache Require Path
+    print("Patching Cache.class.php require path...")
+    cache_class_path = os.path.join(project_dir, 'includes', 'classes', 'Cache.class.php')
+    target4 = "require 'includes/classes/cache/builder/BuildCache.interface.php';"
+    replacement4 = "require dirname(__FILE__) . '/cache/builder/BuildCache.interface.php';"
+    patch_file(cache_class_path, target4, replacement4)
     
 
     # 2. Configure Docker Compose
