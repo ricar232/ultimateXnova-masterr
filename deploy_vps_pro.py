@@ -111,6 +111,12 @@ def main():
     else:
         print("Warning: Could not match block for Ticket Logic patch. Check indentation.")
 
+    # Patch 3: Fix Config Not Found in ExceptionHandler
+    print("Patching Config Class access in ExceptionHandler...")
+    target3 = "if (MODE !== 'INSTALL') {\n\t\ttry {\n\t\t\t$config\t\t= Config::get();"
+    replacement3 = "if (MODE !== 'INSTALL' && class_exists('Config')) {\n\t\ttry {\n\t\t\t$config\t\t= Config::get();"
+    patch_file(gf_path, target3, replacement3)
+    
 
     # 2. Configure Docker Compose
     print("\n[2/5] Configuring Docker...")
@@ -128,6 +134,13 @@ def main():
 
     # 3. Fix Permissions
     print("\n[3/5] Fixing Permissions...")
+    
+    # Ensure cache directory exists
+    cache_path = os.path.join(project_dir, 'cache')
+    if not os.path.exists(cache_path):
+        print("Creating missing 'cache' directory...")
+        os.makedirs(cache_path)
+
     try:
         run_command("chmod -R 777 includes cache", cwd=project_dir)
     except Exception:
